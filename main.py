@@ -10,6 +10,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill((0, 0, 0))
+        pygame.display.flip()
 
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
