@@ -25,3 +25,9 @@ class CircleShape(pygame.sprite.Sprite):
         # if (self.radius + cs_obj.radius) >= distance:
         #     return True
         # return False
+    
+    # def check_screen_border_collision(self, cs_obj):
+    #     screen_rect = pygame.display.get_surface().get_rect()
+
+    #     if screen_rect.contains(cs_obj.x , cs_obj.y):
+            

@@ -20,7 +20,7 @@ class Player(CircleShape):
     def draw(self, screen):
         pygame.draw.polygon(screen, (255, 128, 255), self.triangle(), 2)
 
-    def update(self, dt):
+    def update(self, dt, screen_rect):
         self.shoot_timer -= dt
         keys = pygame.key.get_pressed()
 
