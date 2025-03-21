@@ -5,6 +5,7 @@ from player import Player
 from asteroid import Asteroid
 from asteroidField import AsteroidField
 from shot import Shot
+from score import Score
 
 def main():
     pygame.init()
@@ -25,6 +26,7 @@ def main():
     # player will automatically added to the updatable and drawable because of the line above
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroid_field = AsteroidField()
+    score = Score(30)
   
     dt = 0
    
@@ -43,8 +45,10 @@ def main():
                 if(shot.check_collision(asteroid)):
                     asteroid.split()
                     shot.kill()
+                    score.update_score(2)
 
         screen.fill((0, 0, 0))
+        score.render_score(screen)
 
         for obj in drawable:
             obj.draw(screen=screen)
