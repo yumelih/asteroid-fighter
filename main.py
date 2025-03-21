@@ -6,6 +6,7 @@ from asteroid import Asteroid
 from asteroidField import AsteroidField
 from shot import Shot
 from score import Score
+from background import Background
 
 def main():
     pygame.init()
@@ -27,6 +28,8 @@ def main():
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroid_field = AsteroidField()
     score = Score(30)
+
+    background = Background('./assets/background.png', [0, 0])
   
     dt = 0
    
@@ -48,6 +51,7 @@ def main():
                     score.update_score(2)
 
         screen.fill((0, 0, 0))
+        screen.blit(background.image, background.rect)
         score.render_score(screen)
 
         for obj in drawable:
